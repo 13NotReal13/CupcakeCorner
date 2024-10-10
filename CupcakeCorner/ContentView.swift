@@ -32,6 +32,12 @@ struct ContentView: View {
                         Toggle("Add extra sprinkles", isOn: $order.addSprinkles)
                     }
                 }
+                
+                Section {
+                    NavigationLink("Delivery Details") {
+                        AdressView(order: order)
+                    }
+                }
             }
             .navigationTitle("Cupcake Corner")
             .animation(.easeInOut(duration: 0.3), value: order.specialRequestEnables)
